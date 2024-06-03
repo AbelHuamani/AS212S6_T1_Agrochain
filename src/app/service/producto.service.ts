@@ -9,7 +9,7 @@ import { Producto } from '../interfaces/producto';
 
 export class ProductoService {
   //http://localhost:8080/api/productos //gitpot https://8080-abelcodex-dapps-dpjbccv9jhk.ws-us114.gitpod.io
-  private apiUrl = 'http://localhost:8080/api/productos'; //remplado por gitpot
+  private apiUrl = 'https://8080-abelcodex-dapps-jex58lt1on5.ws-us114.gitpod.io/api/productos'; //remplado por gitpot
 
 constructor(private http: HttpClient) { }
 
