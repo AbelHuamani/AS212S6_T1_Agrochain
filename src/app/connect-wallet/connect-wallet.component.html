@@ -1,0 +1,28 @@
+ <div class="wallet-connection">
+    <button (click)="connectWallet()">Connect Wallet</button>
+    <div *ngIf="account">
+      <p>Cuenta: {{ account }}</p>
+      <p>ETH: {{ balance }} ETH</p>
+    </div>
+  </div> 
+<!-- 
+  <div *ngIf="account" class="transaction-form">
+    <h3>Send Transaction</h3>
+    <form (ngSubmit)="sendTransaction()">
+      <div>
+        <label for="toAddress">To Address:</label>
+        <input id="toAddress" [(ngModel)]="toAddress" name="toAddress" required>
+      </div>
+      <div>
+        <label for="amount">Amount (ETH):</label>
+        <input id="amount" [(ngModel)]="amount" name="amount" type="number" step="0.01" required>
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  
+  
+<div *ngIf="successMessage" class="success-message-container">
+  <div class="success-message">{{ successMessage }}</div>
+</div>   -->
+

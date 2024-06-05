@@ -1,0 +1,31 @@
+<h1 class="text-center">Lista de productos</h1>
+<div class="product-grid">
+  <div *ngFor="let producto of productos" class="card" [ngClass]="{'flipped': producto.flip}">
+    <div class="front">
+      <div class="product-details">
+        <img [src]="producto.imagenurl" alt="{{ producto.nombre }}">
+        <h3>{{ producto.nombre }}</h3>
+        <p>{{ producto.descripcion }}</p>
+        <p class="price">{{ producto.precio | currency }}</p>
+        <p class="date">Fecha de inicio: {{ producto.fechainicio | date: 'dd/MM/yyyy' }}</p>
+        <p class="date">Fecha de culminación: {{ producto.fechaculminacion | date: 'dd/MM/yyyy' }}</p>
+        <div class="button-container">
+          <button (click)="comprar(producto)">Comprar</button>
+          <button (click)="producto.flip = !producto.flip">Información</button>
+        </div>
+      </div>
+    </div>
+    <div class="back">
+      <div class="product-details">
+        <h3>Detalles Adicionales</h3>
+        <p>Teléfono: {{ producto.telefono }}</p>
+        <p>Ubicación: {{ producto.ubicacion }}</p>
+        <p>Wallet: {{ producto.wallet }}</p>
+        <div class="button-container">
+          <button (click)="comprar(producto)">Comprar</button>
+          <button  (click)="producto.flip = !producto.flip">Volver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
