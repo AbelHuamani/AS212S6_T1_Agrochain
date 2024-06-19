@@ -18,7 +18,7 @@ import reactor.core.publisher.Mono;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://studious-goldfish-679x697q7xxhr7gq-4200.app.github.dev")
 @RequestMapping("/api/productos")
 public class ProductoController {
 
