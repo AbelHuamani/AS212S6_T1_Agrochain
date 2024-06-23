@@ -10,7 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; // Importa NgbModule
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DepositComponent } from './deposit/deposit.component'; // Importa NgbModule
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; // Importa NgbModule
     ConnectWalletComponent,
     InicioComponent,
     ProductoComponent,
-    VistaComponent
+    VistaComponent,
+    DepositComponent
   ],
   imports: [
     BrowserModule,

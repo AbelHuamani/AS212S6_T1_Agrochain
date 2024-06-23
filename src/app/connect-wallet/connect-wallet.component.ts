@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Web3Service } from '../service/web3.service';
-import { ProductoService } from '../service/producto.service';
-import { Producto } from '../interfaces/producto';
+import { EthereumService } from '../service/ethereum.service';
 
 @Component({
   selector: 'app-connect-wallet',
@@ -10,7 +9,23 @@ import { Producto } from '../interfaces/producto';
 })
 
 export class ConnectWalletComponent {
-  account: string | null = null;
+  connectedAccount: string = '';
+
+  constructor(public ethereumService: EthereumService) { }
+
+  ngOnInit() {
+    this.ethereumService.connectedAccount$.subscribe(account => {
+      this.connectedAccount = account;
+    });
+  }
+  connectToMetaMask() {
+    this.ethereumService.connectToMetaMask();
+  }
+
+
+
+  /*
+account: string | null = null;
   balance: string = '0';
   toAddress: string = '';     // para la tranferencia
   amount: string = '';        // para la tranferencia
@@ -23,28 +38,6 @@ export class ConnectWalletComponent {
     if (this.account) {
       this.balance = await this.web3Service.getBalance();
     }
-  }
-  /*
-  //transaccion y notificacion
-  async sendTransaction(): Promise<void> {
-    if (this.toAddress && this.amount) {
-      try {
-        await this.web3Service.sendTransaction(this.toAddress, this.amount);
-        this.successMessage = 'Transferencia exitosa!';
-        this.balance = await this.web3Service.getBalance(); // Update balance after transaction
-        this.resetForm();
-      } catch (error) {
-        console.error('Transaction failed:', error);
-      }
-    }
-  }
-
-  private resetForm(): void {
-    this.toAddress = '';
-    this.amount = '';
-    setTimeout(() => {
-      this.successMessage = null;
-    }, 3000); // Clear success message after 3 seconds
-  }*/
+  }  */
 }
 

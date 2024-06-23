@@ -6,7 +6,7 @@
         <img [src]="producto.imagenurl" alt="{{ producto.nombre }}">
         <h3>{{ producto.nombre }}</h3>
         <p>{{ producto.descripcion }}</p>
-        <p class="price">{{ producto.precio | currency }}</p>
+        <p class="price">{{ producto.precio }} ETH</p>
         <p class="date">Fecha de inicio: {{ producto.fechainicio | date: 'dd/MM/yyyy' }}</p>
         <p class="date">Fecha de culminación: {{ producto.fechaculminacion | date: 'dd/MM/yyyy' }}</p>
         <div class="button-container">

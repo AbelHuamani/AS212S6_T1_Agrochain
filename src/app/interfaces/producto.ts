@@ -8,7 +8,7 @@ export interface  Producto {
     fechaculminacion: string;
     telefono: string;
     ubicacion: string;
-    wallet: string;
+    wallet: string;       
     estado: string;
     isFlipped: boolean;
     flip: boolean;

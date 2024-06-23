@@ -22,10 +22,14 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "resolveJsonModule": true, // Añade esta línea
+    "allowSyntheticDefaultImports": true, //AÑADIDO PARA EL METAMASK 19/06 detectEthereumProvider
+   "esModuleInterop": true,              //AÑADIDO PARA EL METAMASK 19/06
   },
   "angularCompilerOptions": {
     "allowSyntheticDefaultImports": true, //recien añadido para la we3
+   "esModuleInterop": true,              //AÑADIDO PARA EL METAMASK 19/06
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,

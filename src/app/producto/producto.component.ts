@@ -19,13 +19,11 @@ export class ProductoComponent implements OnInit {
   constructor(private productoService: ProductoService, private fb: FormBuilder) {
     this.productoForm = this.fb.group({
       imagenurl: ['', Validators.required],
-     // nombre: ['', [Validators.required, Validators.maxLength(100)]],
       nombre: ['', [Validators.required, Validators.maxLength(200), Validators.pattern('^[a-zA-Z ]*$')]],
       descripcion: [''],
       precio: ['', [Validators.required, Validators.min(0)]],
       fechainicio: ['', Validators.required],
       fechaculminacion: ['', Validators.required],
-      //telefono: ['', Validators.required],
       telefono: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       ubicacion: ['', Validators.required],
       wallet: ['', Validators.required],
@@ -76,7 +74,6 @@ export class ProductoComponent implements OnInit {
     }
   }
   
-  
   // Método para formatear la fecha al formato ISO
   private formatDate(date: string): string {
     const d = new Date(date);
@@ -84,8 +81,6 @@ export class ProductoComponent implements OnInit {
     const day = ('0' + d.getDate()).slice(-2);
     return `${d.getFullYear()}-${month}-${day}`;
   }
-  
-
 
   deleteProducto(id: number): void {
     this.productoService.deleteProducto(id).subscribe(() => {
