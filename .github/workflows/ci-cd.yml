@@ -23,7 +23,7 @@ jobs:
         node-version: '14'
 
     - name: Install Dependencies
-      run: npm install
+      run: npm install --legacy-peer-deps
 
     - name: Run Lint
       run: npm run lint
@@ -56,7 +56,7 @@ jobs:
         node-version: '14'
 
     - name: Install Dependencies
-      run: npm install
+      run: npm install --legacy-peer-deps
 
     - name: Run SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
