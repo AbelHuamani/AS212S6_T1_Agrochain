@@ -1,0 +1,151 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+  border-radius: 100px;
+}
+
+.card {
+  background-color: #8bd6b7;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  perspective: 1000px;
+  max-width: 100%; /* Adaptar al ancho disponible */
+  position: relative;
+  height: 400px; /* Altura fija para las tarjetas */
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.front {
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: #8bd6b7;
+}
+
+.card.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .back {
+  transform: rotateY(0deg);
+}
+
+.product-details {
+  flex-grow: 1;
+}
+
+.card img {
+  max-width: 100px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.card .price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.button-container button {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  flex: 1;
+  font-size: 15px; /* Tamaño de texto consistente para todos los botones */
+  border-radius: 90px;
+}
+
+.front .button-container,
+.back .button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.front .button-container button,
+.back .button-container button {
+  flex-grow: 1; /* Hacer que todos los botones ocupen el mismo espacio */
+}
+
+.front .button-container button:first-child,
+.back .button-container button:first-child {
+  margin-right: 5px; /* Ajustar el margen entre los botones */
+}
+
+.front .button-container button:last-child,
+.back .button-container button:last-child {
+  margin-left: 5px; /* Ajustar el margen entre los botones */
+}
+
+.back .button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.back .button-container button {
+  padding: 10px;
+  border: none;
+  border-radius: 100px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0 10px; /* Reducir el margen para acercar los botones */
+  color: white;
+  transition-duration: 0.4s;
+}
+
+/**/
+.product-details {
+  position: relative;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 20px; /* Ajusta este valor para mover los botones hacia arriba o hacia abajo */
+
+}
