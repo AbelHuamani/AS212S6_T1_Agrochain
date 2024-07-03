@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ProductoService {
   //http://localhost:8080/api/productos //gitpot https://8080-abelcodex-dapps-dpjbccv9jhk.ws-us114.gitpod.io
-  private apiUrl = 'https://8080-abelcodex-dapps-21cqovtau6m.ws-us115.gitpod.io/api/productos'; //remplazo por gitpot
+  private apiUrl = 'http://localhost:8080/api/productos'; //remplazo por gitpot
 
   //recien añadido
   private productoSource = new BehaviorSubject<Producto | null>(null);
